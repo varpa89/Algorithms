@@ -16,7 +16,7 @@ public class Selection extends Helper {
      *
      * @param a the array to be sorted
      */
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
             int min = i;
