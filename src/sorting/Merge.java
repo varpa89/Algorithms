@@ -52,7 +52,7 @@ public class Merge extends Helper {
     }
 
     public static void main(String[] args) {
-        String[] a = {"S","O","R","T","E","X","A","M","P","L","E"};
+        String[] a = {"S","O","R","T","E","X","A","M","P","L","E","!"};
         System.out.println("Before:");
         show(a);
         Merge.sort(a);
