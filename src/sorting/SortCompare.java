@@ -23,6 +23,9 @@ public class SortCompare {
         if(alg.equals("Merge")){
             Merge.sort(a);
         }
+        if(alg.equals("Quick")){
+            Quick.sort(a);
+        }
         return timer.elapsedTime();
     }
 
@@ -41,11 +44,14 @@ public class SortCompare {
     public static void main(String[] args) {
         String alg1 = "Shell";
         String alg2 = "Merge";
+        String alg3 = "Quick";
         int N = 500000;
         int T = 10;
         double t1 = timeRandomInput(alg1, N, T);
         double t2 = timeRandomInput(alg2, N, T);
+        double t3 = timeRandomInput(alg3, N, T);
         System.out.println("Для " + N + " случайных Doubles " + alg1 + " " + t1);
         System.out.println("Для " + N + " случайных Doubles " + alg2 + " " + t2);
+        System.out.println("Для " + N + " случайных Doubles " + alg3 + " " + t3);
     }
 }
