@@ -7,10 +7,8 @@ public class Insertion extends Helper {
 
     public static void sort(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            for(int j = 0; j < a.length -1; j++){
-                if (less(a[i], a[j])) {
-                    change(a, i, j);
-                }
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                change(a, j, j-1);
             }
         }
     }
