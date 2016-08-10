@@ -33,7 +33,7 @@ public class Chance {
         int one = 0;
         int two = 0;
         int other = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10000; i++) {
             int value = rand3();
             if (value == 0) {
                 zero++;
