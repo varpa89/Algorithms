@@ -1,6 +1,8 @@
 import playback.*;
 import sorting.*;
+import sorting.Heap;
 import sorting.Insertion;
+import sorting.Merge;
 import sorting.Selection;
 import sorting.Shell;
 import util.StdRandom;
