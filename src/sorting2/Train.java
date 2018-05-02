@@ -16,16 +16,15 @@ public class Train {
     }
 
     private static void selection(int[] values) {
-
         for (int j = 0; j < values.length; j++) {
-            int minId = j;
-            for (int i = j; i < values.length; i++) {
-                if (values[i] < values[minId]) {
-                    minId = i;
+            int min = j;
+            for (int i = j+1; i < values.length; i++) {
+                if (values[i] < values[min]) {
+                    min = i;
                 }
             }
-            int temp = values[minId];
-            values[minId] = values[j];
+            int temp = values[min];
+            values[min] = values[j];
             values[j] = temp;
         }
         System.out.println(Arrays.toString(values));
@@ -47,13 +46,15 @@ public class Train {
     private static void bubble(int[] values) {
         for (int j = 0; j < values.length; j++) {
             for (int i = 0; i < values.length - j - 1; i++) {
-                if (values[i] > values[i + 1]) {
-                    int temp = values[i];
-                    values[i] = values[i + 1];
-                    values[i + 1] = temp;
+                if (values[i + 1] < values[i]) {
+                    int temp = values[i + 1];
+                    values[i + 1] = values[i];
+                    values[i] = temp;
                 }
             }
         }
+
+
         System.out.println(Arrays.toString(values));
     }
 }
