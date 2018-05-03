@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class MergeSort {
     public static void main(String[] args) {
-        int[] values = {10, 9, 1, 4, 6};
+        int[] values = {12, 11, 13, 5, 6, 7};
 
         sort(values, 0, values.length - 1);
         System.out.println(Arrays.toString(values));
@@ -46,7 +46,7 @@ public class MergeSort {
         int i = 0, j = 0;
         int k = l;
         while (i < s1 && j < s2) {
-            if (L[i] <= R[i]) {
+            if (L[i] <= R[j]) {
                 arr[k] = L[i];
                 i++;
             } else {
@@ -56,13 +56,13 @@ public class MergeSort {
             k++;
         }
 
-        while (i<s1){
+        while (i < s1) {
             arr[k] = L[i];
             i++;
             k++;
         }
 
-        while (j<s2){
+        while (j < s2) {
             arr[k] = R[j];
             j++;
             k++;
