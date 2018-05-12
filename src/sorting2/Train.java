@@ -18,36 +18,37 @@ public class Train {
     }
 
     private static void selection(int[] values) {
+
         for (int j = 0; j < values.length; j++) {
-            int minIdx = j;
+            int minId = j;
             for (int i = j; i < values.length; i++) {
-                if (values[minIdx] > values[i]) {
-                    minIdx = i;
+                if (values[minId] >= values[i]) {
+                    minId = i;
                 }
             }
             int temp = values[j];
-            values[j] = values[minIdx];
-            values[minIdx] = temp;
+            values[j] = values[minId];
+            values[minId] = temp;
         }
-
         System.out.println(Arrays.toString(values));
     }
 
     private static void insertion(int[] values) {
         for (int i = 1; i < values.length; i++) {
-            int curEl = values[i];
+            int curVal = values[i];
             int j = i - 1;
-            while (j >= 0 && curEl < values[j]) {
+            while (j >= 0 && curVal < values[j]) {
                 values[j + 1] = values[j];
                 j--;
             }
-            values[j + 1] = curEl;
+            values[j + 1] = curVal;
         }
 
         System.out.println(Arrays.toString(values));
     }
 
     private static void bubble(int[] values) {
+
         for (int j = 0; j < values.length; j++) {
             for (int i = 0; i < values.length - j - 1; i++) {
                 if (values[i] > values[i + 1]) {
@@ -57,6 +58,7 @@ public class Train {
                 }
             }
         }
+
         System.out.println(Arrays.toString(values));
     }
 
@@ -78,17 +80,18 @@ public class Train {
         int s1 = m - l + 1;
         int s2 = r - m;
 
-        int L[] = new int[s1];
-        int R[] = new int[s2];
+        int[] L = new int[s1];
+        int[] R = new int[s2];
 
         for (int i = 0; i < s1; i++) {
-            L[i] = arr[l + i];
+            L[i] = arr[i + l];
         }
         for (int i = 0; i < s2; i++) {
-            R[i] = arr[m + i + 1];
+            R[i] = arr[i + m + 1];
         }
 
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
         int k = l;
         while (i < s1 && j < s2) {
             if (L[i] <= R[j]) {
@@ -122,9 +125,9 @@ public class Train {
 
     private static int partition(int[] arr, int l, int r) {
         int pi = arr[r];
-        int i = l-1;
+        int i = l - 1;
         for (int j = l; j < r; j++) {
-            if(arr[j] <= pi){
+            if (pi >= arr[j]) {
                 i++;
                 int temp = arr[j];
                 arr[j] = arr[i];
@@ -134,6 +137,7 @@ public class Train {
         int temp = arr[i+1];
         arr[i+1] = arr[r];
         arr[r] = temp;
+
 
         return i+1;
     }
@@ -145,5 +149,6 @@ public class Train {
             quickSort(arr, pi + 1, r);
         }
     }
+
 
 }
